@@ -1,0 +1,132 @@
+ 
+   ***********************************************  
+   ***                                         ***  
+   ***      SONAR                              ***  
+   ***  Data: 08/11/2022                                
+   ***  Hora: 22:50:41,41                                  
+   ***                                              
+   ***********************************************  
+   
+   
+INFO: Scanner configuration file: C:\Users\Helio\OneDrive\Documentos\Ambiente Dev\SonarQube\sonar-scanner-4.7.0.2747-windows\bin\..\conf\sonar-scanner.properties
+INFO: Project root configuration file: C:\Users\Helio\OneDrive\Documentos\Ambiente Dev\GIT\Treinamento_Fiserv_Emprestimo\sonar-project.properties
+INFO: SonarScanner 4.7.0.2747
+INFO: Java 11.0.14.1 Eclipse Adoptium (64-bit)
+INFO: Windows 11 10.0 amd64
+INFO: User cache: C:\Users\Helio\.sonar\cache
+INFO: Scanner configuration file: C:\Users\Helio\OneDrive\Documentos\Ambiente Dev\SonarQube\sonar-scanner-4.7.0.2747-windows\bin\..\conf\sonar-scanner.properties
+INFO: Project root configuration file: C:\Users\Helio\OneDrive\Documentos\Ambiente Dev\GIT\Treinamento_Fiserv_Emprestimo\sonar-project.properties
+INFO: Analyzing on SonarQube server 9.5.0.56709
+INFO: Default locale: "pt_BR", source code encoding: "UTF-8"
+INFO: Load global settings
+INFO: Load global settings (done) | time=257ms
+INFO: Server id: 147B411E-AYOA47xVVXhWxKDXUgRX
+INFO: User cache: C:\Users\Helio\.sonar\cache
+INFO: Load/download plugins
+INFO: Load plugins index
+INFO: Load plugins index (done) | time=230ms
+INFO: Load/download plugins (done) | time=336ms
+INFO: Process project properties
+INFO: Process project properties (done) | time=13ms
+INFO: Execute project builders
+INFO: Execute project builders (done) | time=2ms
+INFO: Project key: Exemplo_Fiserv
+INFO: Base dir: C:\Users\Helio\OneDrive\Documentos\Ambiente Dev\GIT\Treinamento_Fiserv_Emprestimo
+INFO: Working dir: C:\Users\Helio\OneDrive\Documentos\Ambiente Dev\GIT\Treinamento_Fiserv_Emprestimo\.scannerwork
+INFO: Load project settings for component key: 'Exemplo_Fiserv'
+INFO: Load project settings for component key: 'Exemplo_Fiserv' (done) | time=241ms
+WARN: SCM provider autodetection failed. Please use "sonar.scm.provider" to define SCM of your project, or disable the SCM Sensor in the project settings.
+INFO: Load quality profiles
+INFO: Load quality profiles (done) | time=252ms
+INFO: Load active rules
+INFO: Load active rules (done) | time=5259ms
+INFO: Load analysis cache
+INFO: Load analysis cache (477 bytes) | time=222ms
+INFO: Load project repositories
+INFO: Load project repositories (done) | time=192ms
+INFO: Indexing files...
+INFO: Project configuration:
+INFO:   Excluded sources: **/target/**, **/*enum, **/*Test.java, **/*test, **/*config/**, **/*.properties, **/*.git, **/*.settings, **/*Documentação, **/*LOG, **/*.bat
+INFO: 13 files indexed
+INFO: 54 files ignored because of inclusion/exclusion patterns
+INFO: Quality profile for java: Sonar way
+INFO: Quality profile for xml: Sonar way
+INFO: ------------- Run sensors on module Exemplo_Fiserv
+INFO: Load metrics repository
+INFO: Load metrics repository (done) | time=244ms
+INFO: Sensor JavaSensor [java]
+INFO: Configured Java source version (sonar.java.source): none
+INFO: JavaClasspath initialization
+INFO: JavaClasspath initialization (done) | time=15ms
+INFO: JavaTestClasspath initialization
+INFO: JavaTestClasspath initialization (done) | time=0ms
+INFO: The Java analyzer cannot skip unchanged files in this context. A full analysis is performed for all files.
+INFO: Server-side caching is enabled. The Java analyzer was able to leverage cached data from previous analyses for 0 out of 3 files. These files will not be parsed.
+INFO: Using ECJ batch to parse 3 Main java source files with batch size 213 KB.
+INFO: Starting batch processing.
+INFO: 100% analyzed
+INFO: Batch processing: Done.
+INFO: Did not optimize analysis for any files, performed a full analysis for all 3 files.
+INFO: No "Test" source files to scan.
+INFO: No "Generated" source files to scan.
+INFO: Sensor JavaSensor [java] (done) | time=1640ms
+INFO: Sensor JaCoCo XML Report Importer [jacoco]
+WARN: No coverage report can be found with sonar.coverage.jacoco.xmlReportPaths='./'. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+INFO: Importing 1 report(s). Turn your logs in debug mode in order to see the exhaustive list.
+INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=25ms
+INFO: Sensor CSS Rules [javascript]
+INFO: No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
+INFO: Sensor CSS Rules [javascript] (done) | time=0ms
+INFO: Sensor C# Project Type Information [csharp]
+INFO: Sensor C# Project Type Information [csharp] (done) | time=3ms
+INFO: Sensor C# Analysis Log [csharp]
+INFO: Sensor C# Analysis Log [csharp] (done) | time=26ms
+INFO: Sensor C# Properties [csharp]
+INFO: Sensor C# Properties [csharp] (done) | time=0ms
+INFO: Sensor SurefireSensor [java]
+INFO: parsing [C:\Users\Helio\OneDrive\Documentos\Ambiente Dev\GIT\Treinamento_Fiserv_Emprestimo\target\test-classes\JunitTest]
+ERROR: Reports path not found or is not a directory: C:\Users\Helio\OneDrive\Documentos\Ambiente Dev\GIT\Treinamento_Fiserv_Emprestimo\target\test-classes\JunitTest
+INFO: Sensor SurefireSensor [java] (done) | time=3ms
+INFO: Sensor Removed properties sensor [java]
+WARN: Property 'sonar.jacoco.reportPath' is no longer supported. Use JaCoCo's xml report and sonar-jacoco plugin.
+INFO: Sensor Removed properties sensor [java] (done) | time=0ms
+INFO: Sensor HTML [web]
+INFO: Sensor HTML [web] (done) | time=8ms
+INFO: Sensor XML Sensor [xml]
+INFO: 1 source file to be analyzed
+INFO: 1/1 source file has been analyzed
+INFO: Sensor XML Sensor [xml] (done) | time=282ms
+INFO: Sensor Text Sensor [text]
+INFO: 4 source files to be analyzed
+INFO: 4/4 source files have been analyzed
+INFO: Sensor Text Sensor [text] (done) | time=19ms
+INFO: Sensor VB.NET Project Type Information [vbnet]
+INFO: Sensor VB.NET Project Type Information [vbnet] (done) | time=1ms
+INFO: Sensor VB.NET Analysis Log [vbnet]
+INFO: Sensor VB.NET Analysis Log [vbnet] (done) | time=19ms
+INFO: Sensor VB.NET Properties [vbnet]
+INFO: Sensor VB.NET Properties [vbnet] (done) | time=0ms
+INFO: ------------- Run sensors on project
+INFO: Sensor Analysis Warnings import [csharp]
+INFO: Sensor Analysis Warnings import [csharp] (done) | time=0ms
+INFO: Sensor Zero Coverage Sensor
+INFO: Sensor Zero Coverage Sensor (done) | time=14ms
+INFO: Sensor Java CPD Block Indexer
+INFO: Sensor Java CPD Block Indexer (done) | time=14ms
+INFO: SCM Publisher No SCM system was detected. You can use the 'sonar.scm.provider' property to explicitly specify it.
+INFO: CPD Executor 1 file had no CPD blocks
+INFO: CPD Executor Calculating CPD for 2 files
+INFO: CPD Executor CPD calculation finished (done) | time=22ms
+INFO: Analysis report generated in 89ms, dir size=128.5 kB
+INFO: Analysis report compressed in 27ms, zip size=23.9 kB
+INFO: Analysis report uploaded in 244ms
+INFO: ANALYSIS SUCCESSFUL, you can find the results at: http://localhost:9000/dashboard?id=Exemplo_Fiserv
+INFO: Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+INFO: More about the report processing at http://localhost:9000/api/ce/task?id=AYRaFUtsuDEyOmqgoqt3
+INFO: Analysis total time: 12.000 s
+INFO: ------------------------------------------------------------------------
+INFO: EXECUTION SUCCESS
+INFO: ------------------------------------------------------------------------
+INFO: Total time: 14.259s
+INFO: Final Memory: 21M/80M
+INFO: ------------------------------------------------------------------------

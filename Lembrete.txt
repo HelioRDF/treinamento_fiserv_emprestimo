@@ -1,0 +1,44 @@
+package negocio;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import modelo.Cliente;
+
+public class ValidarTest {
+
+	@Test
+	public void testarClienteValidoIdadeMinima() {
+		Cliente cliente01 = new Cliente("Ester", 18, 2000);
+		Validar validador = new Validar();
+		String resultado = validador.aprovarEmprestimo(cliente01);
+		assertEquals("Aprovado", resultado);
+	}
+
+	@Test
+	public void testarClienteValidoIdadeMaxima() {
+		Cliente cliente01 = new Cliente("Ester", 18, 2000);
+		Validar validador = new Validar();
+		String resultado = validador.aprovarEmprestimo(cliente01);
+		assertEquals("Aprovado", resultado);
+	}
+
+	
+	@Test
+	public void testarClienteIdadeAbaixoDaFaixa() {
+		Cliente cliente01 = new Cliente("Aline", 17, 3000);
+		Validar validador = new Validar();
+		String resultado = validador.aprovarEmprestimo(cliente01);
+		assertEquals("Reprovado", resultado);
+	}
+
+	@Test
+	public void testarClienteIdadeAcimaDaFaixa() {
+		Cliente cliente01 = new Cliente("João", 81, 4000);
+		Validar validador = new Validar();
+		String resultado = validador.aprovarEmprestimo(cliente01);
+		assertEquals("Reprovado", resultado);
+	}
+
+}

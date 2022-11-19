@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AplicacaoGrafica.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Treinamento_Fiserv</a> &gt; <a href="index.source.html" class="el_package">negocio</a> &gt; <span class="el_source">AplicacaoGrafica.java</span></div><h1>AplicacaoGrafica.java</h1><pre class="source lang-java linenums">package negocio;
+
+import java.awt.Component;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import modelo.Cliente;
+
+/**
+ * @author fabricio.paixao
+ */
+
+<span class="nc" id="L18">public class AplicacaoGrafica {</span>
+<span class="nc" id="L19">	private static JPanel Painel = new JPanel();</span>
+<span class="nc" id="L20">	private static JFrame Formulario = new JFrame();</span>
+
+	public static void main(String[] args) {
+		// --[ TERMINAR A EXECUCAO SE O FORMULARIO FOR FECHADO ]--\\
+<span class="nc" id="L24">		Formulario.setDefaultCloseOperation(Formulario.EXIT_ON_CLOSE);</span>
+
+		// --[ SETA O TITULO DO FORMULARIO ]--\\
+<span class="nc" id="L27">		Formulario.setTitle(&quot;Solicitar emprestimo V2&quot;);</span>
+
+		// --[ SETA O TAMANHO DO FORUMLARIO ]--\\
+<span class="nc" id="L30">		Formulario.setSize(400, 200);</span>
+
+		// --[ CENTRALIZA O FORMULARIO ]--\\
+<span class="nc" id="L33">		Formulario.setLocationRelativeTo(null);</span>
+
+		// --[ DESLIGANDO O GERENCIADOR DE LAYOUT ]--\\
+<span class="nc" id="L36">		Painel.setLayout(null);</span>
+
+		// --[ ADICIONA O PAINEL AO FORMULARIO ]--\\
+<span class="nc" id="L39">		Formulario.add(Painel);</span>
+
+		// --[ CRIANDO OS LABEL'S ]--\\
+<span class="nc" id="L42">		JLabel LabelNome = new JLabel(&quot;Nome&quot;);</span>
+<span class="nc" id="L43">		JLabel LabelIdade = new JLabel(&quot;Idade&quot;);</span>
+<span class="nc" id="L44">		JLabel LabelValor = new JLabel(&quot;Valor&quot;);</span>
+
+//	        //--[ CRIA UMA BORDA NO JLABEL ]--\\
+//	        Label3.setBorder( BorderFactory.createTitledBorder( &quot;&quot; ) ) ;
+//	        
+//	        //--[ SETA O ALINHAMENTO CENTRAL ]--\\
+//	        Label3.setHorizontalAlignment( SwingConstants.CENTER );
+
+		// --[ CRIANDO OS CAMPOS DE TEXTO ]--\\
+<span class="nc" id="L53">		JTextField campoNome = new JTextField(&quot;&quot;);</span>
+<span class="nc" id="L54">		JTextField campoIdade = new JTextField(&quot;&quot;);</span>
+<span class="nc" id="L55">		JTextField campoValor = new JTextField(&quot;&quot;);</span>
+
+		// --[ CRIANDO O BOTAO ]--\\
+<span class="nc" id="L58">		JButton Botao = new JButton(&quot;Solicitar&quot;);</span>
+
+		// --[ ADICIONANDO OS COMPONENTES NO PAINEL DO FORMULARIO ]--\\
+<span class="nc" id="L61">		Adiciona(LabelNome, 10, 10, 70, 25);</span>
+<span class="nc" id="L62">		Adiciona(campoNome, 80, 10, 230, 25);</span>
+
+<span class="nc" id="L64">		Adiciona(LabelIdade, 10, 40, 70, 25);</span>
+<span class="nc" id="L65">		Adiciona(campoIdade, 80, 40, 230, 25);</span>
+
+<span class="nc" id="L67">		Adiciona(LabelValor, 10, 70, 70, 25);</span>
+<span class="nc" id="L68">		Adiciona(campoValor, 80, 70, 230, 25);</span>
+
+<span class="nc" id="L70">		Adiciona(Botao, 80, 100, 230, 25);</span>
+
+<span class="nc" id="L72">		String nome = campoNome.getText();</span>
+
+<span class="nc" id="L74">		Formulario.setVisible(true);</span>
+<span class="nc" id="L75">		Botao.addActionListener(e -&gt; {</span>
+<span class="nc" id="L76">			consultar(campoNome.getText().toString(), Integer.parseInt(campoIdade.getText()),</span>
+<span class="nc" id="L77">					Integer.parseInt(campoValor.getText()), campoNome, campoIdade, campoValor);</span>
+<span class="nc" id="L78">		});</span>
+<span class="nc" id="L79">	}</span>
+
+	public static void consultar(String nome, int idade, int valor, JTextField campoNome, JTextField campoIdade,
+			JTextField campoValor) {
+
+<span class="nc" id="L84">		Cliente cliente = new Cliente(nome, idade, valor);</span>
+<span class="nc" id="L85">		System.out.println(cliente.toString());</span>
+<span class="nc" id="L86">		Validar validar = new Validar();</span>
+<span class="nc" id="L87">		String resposta = validar.aprovarEmprestimo(cliente).toUpperCase();</span>
+
+<span class="nc" id="L89">		JOptionPane.showMessageDialog(null, cliente.getNome() + &quot;, o emprestimo foi &quot; + resposta, &quot;Informação&quot;,</span>
+				JOptionPane.INFORMATION_MESSAGE);
+
+<span class="nc" id="L92">		campoNome.setText(&quot;&quot;);</span>
+<span class="nc" id="L93">		campoIdade.setText(&quot;&quot;);</span>
+<span class="nc" id="L94">		campoValor.setText(&quot;&quot;);</span>
+		;
+
+<span class="nc" id="L97">	}</span>
+
+	// --[ FUNCAO PARA ADICIONAR COMPONENTES NO PAINEL DO FORMULARIO ]--\\
+	private static void Adiciona(Component Componente, int nColuna, int nLinha, int nLargura, int nAltura) {
+		// --[ ADICIONA O COMPONENTE NO PAINEL ]--\\
+<span class="nc" id="L102">		Painel.add(Componente);</span>
+
+		// --[ SETA A POSICAO EXATA DO COMPONENTE ]--\\
+<span class="nc" id="L105">		Componente.setBounds(nColuna, nLinha, nLargura, nAltura);</span>
+<span class="nc" id="L106">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
